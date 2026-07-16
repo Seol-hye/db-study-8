@@ -14,6 +14,21 @@ where p.deptno = d.deptno
         where p2.deptno = p.deptno)
 order by p.hiredate;
 
+
+
+select deptno, MIN(hiredate)
+from professor
+group by deptno;
+
+select p.profno, p.name, d.dname
+from professor p, department d
+where (p.deptno, p.hiredate) IN (select deptno, MIN(hiredate)
+                                from professor
+                                group by deptno)
+AND p.deptno = d.deptno;
+
+
+
 --2. emp2 테이블 조회하여 직급별로 해당 직급에서 최대 연봉을 받는 직원의 이름과 직급, 연봉을 출력하세요
 --(연봉순으로 오름차순 정렬)
 select * from emp2;
