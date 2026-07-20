@@ -39,6 +39,6 @@ CREATE TABLE T4
     CONSTRAINT T4_PK PRIMARY KEY (no, id) --no id 두개 컬럼을 조합으로 PK 설정
 );
 
-                                                        ㅍ
+                                                        
 ---------------------------------
 
